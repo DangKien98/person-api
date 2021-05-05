@@ -39,6 +39,10 @@ public class PersonService {
 
     public Person deletePerson (Long id) {
         Person personFound = getById(id);
-        if(personFound != null)
+        if(personFound != null) {
+            personRepository.delete(personFound);
+            return personFound;
+        }
+        return null;
     }
 }
