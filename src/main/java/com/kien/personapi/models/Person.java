@@ -16,4 +16,6 @@ public class Person {
     private String fullName;
 
     private int age;
+
+    private boolean alive;
 }
