@@ -29,6 +29,11 @@ public class PersonController {
         return personService.getById(id);
     }
 
+    @GetMapping("/searchAge/{age}")
+    public List<Person> getPersonByAge(@PathVariable("age") int age) {
+        return personService.getPersonByAge(age);
+    }
+
     @PutMapping("/{id}")
     public Person updatePerson(@PathVariable("id") Long id, @RequestBody Person person) {
         return personService.updatePerson(id, person);

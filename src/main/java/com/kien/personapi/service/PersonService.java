@@ -29,9 +29,13 @@ public class PersonService {
         return null;
     }
 
+    public List<Person> getPersonByAge(int age) {
+        return personRepository.getPersonByAgeAfter(age);
+    }
+
     public Person updatePerson(Long id, Person person) {
         Person personFound = getById(id);
-        if(personFound != null || id == personFound.getId())
+        if(personFound != null || id.equals(personFound.getId()))
             return personRepository.save(person);
 
         return null;
